@@ -1,0 +1,122 @@
+/* Layout Stylesheet */
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-right: 4rem;
+    padding-left: 4rem;
+  }
+}
+
+section {
+  width: 100%;
+  min-height: 100vh;
+  padding: var(--section-padding);
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-color: var(--bg-color);
+  overflow: hidden;
+  scroll-margin-top: 80px; /* Space for sticky header */
+}
+
+/* Flex Grid Grid */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .grid-2 {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 6rem;
+  }
+}
+
+/* Split layout variations */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+@media (min-width: 992px) {
+  .about-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+  }
+}
+
+/* Section styling helpers */
+.section-header {
+  margin-bottom: 3rem;
+}
+
+.pretitle {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+  color: var(--primary-blue);
+  opacity: 0.85;
+}
+
+.title-large {
+  font-family: var(--font-sans);
+  font-size: clamp(2.8rem, 6.5vw, 5.5rem);
+  font-weight: 700;
+  line-height: 1.05;
+  color: var(--text-dark);
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+}
+
+.title-serif {
+  font-family: var(--font-serif);
+  font-size: clamp(2.8rem, 6.5vw, 5.5rem);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.05;
+  color: var(--primary-blue);
+  margin-top: 0.2rem;
+}
+
+.subtitle-large {
+  font-family: var(--font-sans);
+  font-size: clamp(2rem, 4.5vw, 3.8rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--text-dark);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.paragraph-large {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  max-width: 500px;
+}
+
+/* Floating SVG rotator container helper */
+.decorations-container {
+  position: absolute;
+  pointer-events: none;
+}

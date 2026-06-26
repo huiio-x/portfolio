@@ -1,0 +1,77 @@
+/* Animations & Transitions */
+
+/* 1. Infinite Spin Animation for circular SVG patterns */
+@keyframes spin-clockwise {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-counter-clockwise {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.spin-slow {
+  animation: spin-clockwise 35s linear infinite;
+  transform-origin: center;
+}
+
+.spin-slow-reverse {
+  animation: spin-counter-clockwise 40s linear infinite;
+  transform-origin: center;
+}
+
+.spin-fast {
+  animation: spin-clockwise 20s linear infinite;
+  transform-origin: center;
+}
+
+/* 2. Scroll Reveal Animations (Intersection Observer) */
+.reveal-fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.reveal-fade.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delays for multiple items */
+.delay-1 { transition-delay: 0.05s; }
+.delay-2 { transition-delay: 0.1s; }
+.delay-3 { transition-delay: 0.15s; }
+.delay-4 { transition-delay: 0.2s; }
+.delay-5 { transition-delay: 0.25s; }
+.delay-6 { transition-delay: 0.3s; }
+
+/* Micro-interactions (hover animations) */
+.hover-lift {
+  transition: var(--transition-smooth);
+}
+
+.hover-lift:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: var(--shadow-lg);
+}
+
+.gradient-box-hover {
+  transition: var(--transition-smooth);
+}
+
+.gradient-box-hover:hover {
+  transform: scale(1.06) translateY(-8px);
+  box-shadow: var(--shadow-md);
+  filter: saturate(1.1) brightness(1.02);
+}
