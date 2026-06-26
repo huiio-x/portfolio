@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   // Set base to './' to allow relative path imports (great for GitHub Pages static hosting)
-  base: './',
+  base: '/portfolio/',
   build: {
     outDir: 'dist',
     sourcemap: false,
