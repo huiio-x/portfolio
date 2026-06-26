@@ -81,7 +81,7 @@ export default function AboutMe() {
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-start text-center sm:text-left gap-4 pb-6 border-b border-slate-200 dark:border-slate-850">
               <div className="w-28 h-28 rounded-[24px] overflow-hidden border border-slate-200 dark:border-slate-850 shadow-sm flex-shrink-0">
                 <img
-                  src="/images/Profile.png"
+                  src={`${import.meta.env.BASE_URL}images/Profile.png`}
                   alt="프로필"
                   className="w-full h-full object-cover"
                 />

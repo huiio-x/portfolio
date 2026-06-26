@@ -6,19 +6,19 @@ import {
 
 // 실제 이미지 경로 (public/images/ 폴더에 위치)
 // 이미지1: 원자재 입고 예정 관리 화면
-const img1 = '/images/erp-01-receive-schedule.png';
+const img1 = `${import.meta.env.BASE_URL}images/erp-01-receive-schedule.png`;
 // 이미지2: 인쇄 공정 자동 스케줄링 화면 (모바일 전체, PC 텍스트 아래/우측 분리)
-const img2 = '/images/erp-02-print-schedule.png';
-const img2a = '/images/erp-02-print-schedule-01.png';
-const img2b = '/images/erp-02-print-schedule-02.png';
+const img2 = `${import.meta.env.BASE_URL}images/erp-02-print-schedule.png`;
+const img2a = `${import.meta.env.BASE_URL}images/erp-02-print-schedule-01.png`;
+const img2b = `${import.meta.env.BASE_URL}images/erp-02-print-schedule-02.png`;
 // 보조 이미지: 인쇄 비용/계산 화면
-const img2calc = '/images/erp-02-print-calc.png';
+const img2calc = `${import.meta.env.BASE_URL}images/erp-02-print-calc.png`;
 // 이미지3: 바코드 기반 입고 처리 화면
-const img3 = '/images/erp-03-barcode-receive.png';
+const img3 = `${import.meta.env.BASE_URL}images/erp-03-barcode-receive.png`;
 // 이미지4: 바코드 라벨 생성 및 출력 화면
-const img4 = '/images/erp-04-barcode-label.png';
+const img4 = `${import.meta.env.BASE_URL}images/erp-04-barcode-label.png`;
 // 이미지5: ERP 관리자 화면
-const img5 = '/images/erp-05-admin.png';
+const img5 = `${import.meta.env.BASE_URL}images/erp-05-admin.png`;
 
 interface FeatureCard {
   id: number;

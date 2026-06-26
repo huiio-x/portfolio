@@ -2,7 +2,7 @@ import React from 'react';
 import { ExternalLink, Github, Map, CreditCard, Bot } from 'lucide-react';
 
 // 이미지6: AI 지역화폐 플랫폼 (여민동행) - public/images/에 위치
-const img6 = '/images/project-yeomindong.png';
+const img6 = `${import.meta.env.BASE_URL}images/project-yeomindong.png`;
 
 export default function OtherProjects() {
   return (
@@ -179,7 +179,7 @@ export default function OtherProjects() {
             <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
               <div>
                 <img
-                  src="/images/project-development-architecture.png"
+                  src={`${import.meta.env.BASE_URL}images/project-development-architecture.png`}
                   alt="프로젝트 개발 아키텍처 다이어그램"
                   className="w-full h-auto rounded-2xl border border-slate-800"
                 />
@@ -187,7 +187,7 @@ export default function OtherProjects() {
               </div>
               <div>
                 <img
-                  src="/images/project-entity-relationship-diagram.png"
+                  src={`${import.meta.env.BASE_URL}images/project-entity-relationship-diagram.png`}
                   alt="프로젝트 엔터티 관계도 (ERD)"
                   className="w-full h-auto rounded-2xl border border-slate-800"
                 />
@@ -208,7 +208,7 @@ export default function OtherProjects() {
             </div>
             {/* Image */}
             <img
-              src="/images/project-yeomindong-panel.png"
+              src={`${import.meta.env.BASE_URL}images/project-yeomindong-panel.png`}
               alt="AI 지역화폐 플랫폼 여민동행 제출 포스터"
               className="w-full h-auto rounded-2xl"
             />
