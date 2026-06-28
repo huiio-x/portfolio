@@ -1,7 +1,37 @@
 import React from 'react';
 import { Calendar, Cpu, Layers, Settings } from 'lucide-react';
 
-export default function Hero() {
+interface HeroProps {
+  onContactClick?: () => void;
+}
+
+export default function Hero({ onContactClick }: HeroProps) {
+  const handleClick = () => {
+    if (typeof window !== 'undefined') {
+      const isMobileLocal = window.innerWidth <= 767;
+      if (!isMobileLocal) {
+        // Desktop: prefer the first visible `#contact` element (avoid hidden mobile copy)
+        const nodes = Array.from(document.querySelectorAll('#contact')) as HTMLElement[];
+        const visible = nodes.find((n) => {
+          if (!n) return false;
+          const style = window.getComputedStyle(n);
+          return style.display !== 'none' && style.visibility !== 'hidden' && n.offsetParent !== null;
+        });
+        const target = visible || nodes[0];
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+          return;
+        }
+      }
+    }
+
+    // Mobile: prefer the provided handler to open modal
+    try {
+      if (onContactClick) onContactClick();
+    } catch (e) {
+      // ignore
+    }
+  };
   return (
     <section
       id="home"
@@ -41,12 +71,21 @@ export default function Hero() {
             >
               ERP 구축 프로젝트 보기
             </a>
-            <a
-              href="#contact"
-              className="px-6 py-3 rounded-xl bg-slate-850 hover:bg-slate-800 text-sm font-semibold border border-slate-700 transition-all active:scale-95"
-            >
-              연락하기
-            </a>
+            {onContactClick ? (
+              <button
+                onClick={handleClick}
+                className="px-6 py-3 rounded-xl bg-slate-850 hover:bg-slate-800 text-sm font-semibold border border-slate-700 transition-all active:scale-95"
+              >
+                연락하기
+              </button>
+            ) : (
+              <a
+                href="#contact"
+                className="px-6 py-3 rounded-xl bg-slate-850 hover:bg-slate-800 text-sm font-semibold border border-slate-700 transition-all active:scale-95"
+              >
+                연락하기
+              </a>
+            )}
           </div>
         </div>
 

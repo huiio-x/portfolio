@@ -73,7 +73,7 @@ export default function OtherProjects() {
                 </div>
 
                 <p className="text-sm text-slate-400 leading-relaxed font-light">
-                  지역화폐 활성화를 목적으로 개발한 AI 기반 플랫폼. 사용자에게 AI 챗봇을 통해 주변 가맹점 정보를 제공하고,
+                  지역화폐 활성화를 목적으로 개발한 AI 기반 플랫폼. 사용자에게 AI를 통해 주변 가맹점 정보를 제공하고,
                   지도 기반으로 가맹점을 시각적으로 조회할 수 있습니다. 지역 경제 활성화와 지역화폐 사용 편의성 향상에
                   초점을 맞춘 프로젝트입니다.
                 </p>
@@ -82,7 +82,7 @@ export default function OtherProjects() {
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                   <div className="bg-slate-900/50 border border-slate-800 rounded-xl p-3 flex flex-col items-center text-center">
                     <Bot className="w-5 h-5 text-purple-400 mb-2" />
-                    <div className="text-xs font-bold text-white mb-1">AI 챗봇</div>
+                    <div className="text-xs font-bold text-white mb-1">AI</div>
                     <div className="text-[10px] text-slate-400 leading-tight">OpenAI API 활용 가맹점 정보 안내</div>
                   </div>
                   <div className="bg-slate-900/50 border border-slate-800 rounded-xl p-3 flex flex-col items-center text-center">

@@ -11,7 +11,7 @@ export default function Career() {
       typeColor: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20',
       dotColor: 'border-emerald-500/50',
       iconColor: 'text-emerald-400',
-      description: '제조업 ERP 시스템 신규 구축 프로젝트를 1인 개발자로 수행 중. 엑셀 및 수기 기반 업무 프로세스를 웹 기반 ERP 시스템으로 전환하며 업무 분석, DB 설계, 개발, 배포 및 운영 전 과정을 담당.',
+      description: '제조업 ERP 시스템 신규 구축 프로젝트를 1인 개발자로 수행. 엑셀 및 수기 기반 업무 프로세스를 웹 기반 ERP 시스템으로 전환하며 업무 분석, DB 설계, 개발, 배포 및 운영 전 과정을 담당.',
       highlights: [
         '원자재 입고 예정 관리 시스템 구축 (협력사별 입고 현황 실시간 조회)',
         '바코드 기반 원자재 입출고 및 재고 관리 시스템 개발',

@@ -46,6 +46,22 @@ export default function Navbar({ theme, setTheme }: NavbarProps) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleNavClick = (e: React.MouseEvent, id: string) => {
+    e.preventDefault();
+    // find all elements with that id and pick the first visible one
+    const nodes = Array.from(document.querySelectorAll(`#${id}`)) as HTMLElement[];
+    const visible = nodes.find((n) => {
+      if (!n) return false;
+      const style = window.getComputedStyle(n);
+      return style.display !== 'none' && style.visibility !== 'hidden' && n.offsetParent !== null;
+    });
+    const target = visible || nodes[0];
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsOpen(false);
+  };
+
   const toggleTheme = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark');
   };
@@ -75,6 +91,7 @@ export default function Navbar({ theme, setTheme }: NavbarProps) {
               <a
                 key={item.id}
                 href={`#${item.id}`}
+                onClick={(e) => handleNavClick(e, item.id)}
                 className={`px-2.5 py-1.5 rounded-lg text-xs font-medium transition-colors ${
                   activeSection === item.id
                     ? 'text-indigo-500 dark:text-sky-300 bg-indigo-500/10 dark:bg-sky-400/10'
@@ -107,7 +124,7 @@ export default function Navbar({ theme, setTheme }: NavbarProps) {
               <a
                 key={item.id}
                 href={`#${item.id}`}
-                onClick={() => setIsOpen(false)}
+                onClick={(e) => handleNavClick(e, item.id)}
                 className={`block px-4 py-2.5 rounded-lg text-sm font-medium transition-colors ${
                   activeSection === item.id
                     ? 'text-sky-400 bg-sky-400/10'

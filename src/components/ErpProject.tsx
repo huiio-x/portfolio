@@ -244,7 +244,7 @@ export default function ErpProject() {
 
         {/* 프로젝트 진행 과정 */}
         <div className="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-850 rounded-3xl p-6 sm:p-8 shadow-sm mb-10 reveal-fade delay-2">
-          <div className="max-w-3xl">
+          <div className="max-w-5xl">
             <span className="text-xs font-bold uppercase tracking-wider text-indigo-500 bg-indigo-500/10 px-3 py-1 rounded-full">
               프로젝트 진행 과정
             </span>
@@ -256,12 +256,12 @@ export default function ErpProject() {
             </p>
           </div>
 
-          <div className="mt-8 space-y-4">
+          <div className="mt-8 grid gap-4 xl:grid-cols-2">
             {processSteps.map((step, idx) => (
-              <div key={step.title} className="bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-850 rounded-3xl p-5 sm:p-6 flex flex-col gap-4">
+              <div key={step.title} className="h-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-850 rounded-3xl p-5 sm:p-6 flex flex-col gap-4">
                 <div className="flex items-center gap-4">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-indigo-500/10 text-indigo-600 font-bold text-sm">
-                    {idx + 1}
+                  <div className="inline-flex items-center rounded-2xl bg-indigo-500/10 px-3 py-1.5 text-xs font-semibold text-indigo-600">
+                    Step {idx + 1}
                   </div>
                   <h4 className="text-lg font-bold text-slate-900 dark:text-white">{step.title}</h4>
                 </div>
@@ -287,7 +287,7 @@ export default function ErpProject() {
             <h3 className="text-2xl font-extrabold text-slate-900 dark:text-white mt-5">
               생산 계획 자동화 및 재고 관리 통합 ERP 시스템 구축
             </h3>
-            <p className="mt-3 text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+            <p className="mt-3 text-sm text-slate-500 dark:text-slate-400 leading-relaxed whitespace-nowrap">
               생산·재고·원가 관리 기능과 생산 설비 자동 배정과 인쇄비·코팅비·감리비 자동 계산을 포함한 ERP를 1인 개발로 완성하고 실무 운영까지 이어갔습니다.
             </p>
           </div>
@@ -303,12 +303,15 @@ export default function ErpProject() {
             요구사항 분석부터 설계, 개발, 배포, 운영까지 전 과정 수행
           </p>
 
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-            {achievements.map((achievement) => (
-              <div key={achievement} className="bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-850 rounded-3xl p-5">
-                <p className="text-sm font-semibold text-slate-900 dark:text-white leading-relaxed">{achievement}</p>
-              </div>
-            ))}
+          <div className="mt-8 rounded-3xl border border-slate-200 dark:border-slate-850 bg-slate-50 dark:bg-slate-900 p-6">
+            <div className="grid gap-3 sm:grid-cols-2">
+              {achievements.map((achievement) => (
+                <div key={achievement} className="flex items-start gap-3 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
+                  <span className="mt-1 h-2.5 w-2.5 rounded-full bg-indigo-500 shrink-0" />
+                  <span>{achievement}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
