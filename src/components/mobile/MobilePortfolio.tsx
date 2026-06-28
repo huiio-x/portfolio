@@ -215,7 +215,8 @@ export default function MobilePortfolio(props: MobilePortfolioProps) {
     []
   );
 
-  const getErpImageUrl = (fileName: string) => `${import.meta.env.BASE_URL}images/${fileName}`;
+  const baseUrl = import.meta.env.BASE_URL || '/';
+  const getErpImageUrl = (fileName: string) => `${baseUrl}images/${fileName}`;
 
   const erpHighlights = useMemo(
     () => [
@@ -451,7 +452,7 @@ export default function MobilePortfolio(props: MobilePortfolioProps) {
         <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3">
           <div className="flex items-center gap-2.5">
             <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-indigo-500/20 bg-indigo-500/10 shadow-sm">
-              <img src="/favicon.png" alt="portfolio logo" className="h-6 w-6 rounded-lg object-cover" />
+              <img src={`${baseUrl}favicon.png?v=2`} alt="portfolio logo" className="h-6 w-6 rounded-lg object-cover" />
             </div>
             <div>
               <p className="text-[9px] font-semibold uppercase tracking-[0.3em] text-indigo-500">Portfolio</p>
