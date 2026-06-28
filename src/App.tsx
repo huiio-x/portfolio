@@ -76,17 +76,19 @@ export default function App() {
     <>
       {/* Mobile Recommend Modal (only show on mobile) */}
       {showMobileRecommendModal && isMobile && (
-        <div className="fixed inset-0 z-40 flex items-center justify-center">
-          <div className="absolute inset-0 bg-black/50" onClick={() => setShowMobileRecommendModal(false)} />
-          <div className="relative z-10 max-w-md w-full p-6 bg-white dark:bg-slate-900 rounded-2xl shadow-2xl">
-            <h3 className="text-lg font-bold">⚠️ 모바일 화면 안내</h3>
-            <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">모바일에서는 읽기 편하도록 핵심 내용만 제공됩니다.<br />프로젝트의 자세한 내용과 다양한 기능은<br />PC에서 더욱 편하게 확인하실 수 있습니다.</p>
-            <div className="mt-4 flex justify-end">
+        <div className="fixed inset-0 z-40 flex items-center justify-center px-4 py-6 bg-black/40">
+          <div className="absolute inset-0" onClick={() => setShowMobileRecommendModal(false)} />
+          <div className="relative z-10 w-full max-w-sm rounded-3xl bg-white shadow-[0_25px_60px_-30px_rgba(15,23,42,0.75)] border border-slate-200 overflow-hidden">
+            <div className="px-6 py-5">
+              <h3 className="text-lg font-semibold text-slate-950">모바일 화면 안내</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-600">
+                모바일에서는 읽기 편하도록 핵심 내용만 제공됩니다. 프로젝트의 자세한 내용과 다양한 기능은 PC에서 더욱 편하게 확인하실 수 있습니다.
+              </p>
+            </div>
+            <div className="border-t border-slate-200 px-6 py-5 bg-slate-50">
               <button
-                onClick={() => {
-                  setShowMobileRecommendModal(false);
-                }}
-                className="px-4 py-2 rounded bg-indigo-600 text-white"
+                onClick={() => setShowMobileRecommendModal(false)}
+                className="w-full rounded-2xl bg-indigo-600 px-4 py-3 text-sm font-semibold text-white shadow-sm shadow-indigo-600/20 transition hover:bg-indigo-700"
               >
                 확인
               </button>
