@@ -13,7 +13,9 @@ import {
   Copy,
   Cpu,
   Database,
+  ExternalLink,
   FileText,
+  Github,
   GraduationCap,
   HardDrive,
   Languages,
@@ -867,6 +869,19 @@ export default function MobilePortfolio(props: MobilePortfolioProps) {
 
           {openSections.otherProjects && (
             <div className={`mt-4 rounded-2xl border p-4 ${isDark ? 'border-slate-800 bg-slate-950/70' : 'border-slate-200 bg-slate-50'}`}>
+              {/* Project Image */}
+              <div className="mb-4 flex justify-center">
+                <img
+                  src={`${import.meta.env.BASE_URL}images/project-yeomindong.png`}
+                  alt="AI 지역화폐 플랫폼 여민동행"
+                  className="h-auto w-32 rounded-xl shadow-md"
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    target.style.display = 'none';
+                  }}
+                />
+              </div>
+
               <div className="flex items-center gap-2 text-purple-400">
                 <Map className="h-4 w-4" />
                 <p className="text-sm font-semibold">졸업 프로젝트</p>
@@ -879,6 +894,36 @@ export default function MobilePortfolio(props: MobilePortfolioProps) {
                   </li>
                 ))}
               </ul>
+
+              {/* GitHub Links - Side by Side */}
+              <div className="mt-4 flex gap-2 border-t border-slate-700 pt-4">
+                <a
+                  href="https://github.com/3405000/team201-frontend"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`flex flex-1 items-center justify-center gap-1.5 rounded-lg px-2 py-2 text-xs font-semibold transition-colors ${
+                    isDark
+                      ? 'bg-red-500/10 text-red-400 hover:bg-red-500/20'
+                      : 'bg-red-100 text-red-600 hover:bg-red-200'
+                  }`}
+                >
+                  <Github className="h-3.5 w-3.5" />
+                  <span>Frontend</span>
+                </a>
+                <a
+                  href="https://github.com/3405000/team201-backend"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`flex flex-1 items-center justify-center gap-1.5 rounded-lg px-2 py-2 text-xs font-semibold transition-colors ${
+                    isDark
+                      ? 'bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500/20'
+                      : 'bg-emerald-100 text-emerald-600 hover:bg-emerald-200'
+                  }`}
+                >
+                  <Github className="h-3.5 w-3.5" />
+                  <span>Backend</span>
+                </a>
+              </div>
             </div>
           )}
         </section>
@@ -953,25 +998,25 @@ export default function MobilePortfolio(props: MobilePortfolioProps) {
             <div className="mt-4">
               <p className={`text-sm leading-7 ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>제조업 ERP 운영과 신규 구축 경험을 바탕으로 빠르게 적응하고 실무 가치를 만들어내는 백엔드 개발자입니다.</p>
               <div className="mt-4 space-y-3">
-                <button type="button" onClick={() => copyToClipboard('hjeong0309@gmail.com')} className={`flex w-full items-center justify-between rounded-2xl border px-4 py-3 ${isDark ? 'border-slate-800 bg-slate-950/70 hover:bg-slate-900' : 'border-slate-200 bg-slate-50 hover:bg-slate-100'} transition-colors`}>
-                  <div className="flex items-center gap-3">
-                    <Mail className="h-4 w-4 text-indigo-400" />
-                    <div>
+                <button type="button" onClick={() => copyToClipboard('hjeong0309@gmail.com')} className={`flex w-full items-start justify-between rounded-2xl border px-4 py-3 ${isDark ? 'border-slate-800 bg-slate-950/70 hover:bg-slate-900' : 'border-slate-200 bg-slate-50 hover:bg-slate-100'} transition-colors`}>
+                  <div className="flex items-start gap-3 text-left">
+                    <Mail className="mt-0.5 h-4 w-4 flex-shrink-0 text-indigo-400" />
+                    <div className="text-left">
                       <p className="text-sm font-semibold">이메일</p>
                       <p className={`text-xs ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>hjeong0309@gmail.com</p>
                     </div>
                   </div>
-                  <Copy className="h-4 w-4" />
+                  <Copy className="mt-0.5 h-4 w-4 flex-shrink-0" />
                 </button>
-                <button type="button" onClick={() => copyToClipboard('https://huiio-x.github.io/portfolio/')} className={`flex w-full items-center justify-between rounded-2xl border px-4 py-3 ${isDark ? 'border-slate-800 bg-slate-950/70 hover:bg-slate-900' : 'border-slate-200 bg-slate-50 hover:bg-slate-100'} transition-colors`}>
-                  <div className="flex items-center gap-3">
-                    <Code2 className="h-4 w-4 text-sky-400" />
-                    <div>
+                <button type="button" onClick={() => copyToClipboard('https://huiio-x.github.io/portfolio/')} className={`flex w-full items-start justify-between rounded-2xl border px-4 py-3 ${isDark ? 'border-slate-800 bg-slate-950/70 hover:bg-slate-900' : 'border-slate-200 bg-slate-50 hover:bg-slate-100'} transition-colors`}>
+                  <div className="flex items-start gap-3 text-left">
+                    <Code2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-sky-400" />
+                    <div className="text-left">
                       <p className="text-sm font-semibold">GitHub / Portfolio</p>
                       <p className={`text-xs ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>https://huiio-x.github.io/portfolio/</p>
                     </div>
                   </div>
-                  <Copy className="h-4 w-4" />
+                  <Copy className="mt-0.5 h-4 w-4 flex-shrink-0" />
                 </button>
               </div>
             </div>
