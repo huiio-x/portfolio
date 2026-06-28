@@ -3,8 +3,7 @@ import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig(({ mode }) => {
-  const isGitHubPages = process.env.GITHUB_ACTIONS === 'true';
-  const base = mode === 'production' && isGitHubPages ? '/portfolio/' : '/';
+  const base = mode === 'production' ? '/portfolio/' : '/';
 
   return {
     plugins: [react(), tailwindcss()],
