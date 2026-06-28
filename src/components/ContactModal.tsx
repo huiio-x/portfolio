@@ -26,40 +26,40 @@ export default function ContactModal({ open, onClose }: ContactModalProps) {
 
   return (
     <Modal open={open} onClose={onClose}>
-      <h3 className="text-lg font-bold text-slate-900 dark:text-white">연락처</h3>
-      <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">방문해 주셔서 감사합니다.<br />아래 연락처로 편하게 연락 주세요.</p>
+      <h3 className="text-lg font-bold text-slate-900">연락처</h3>
+      <p className="mt-2 text-sm text-slate-500">방문해 주셔서 감사합니다.<br />언제든 편하게 연락 부탁드립니다. :)</p>
 
       <div className="mt-4 space-y-3">
-        <div className="flex items-center justify-between rounded-xl border p-3">
+        <div className="flex items-center justify-between rounded-2xl border border-slate-200/80 bg-slate-50/90 p-3 shadow-sm">
           <div className="flex items-center gap-3">
-            <div className="p-2 rounded bg-indigo-50 dark:bg-indigo-900">
+            <div className="rounded-xl bg-indigo-50 p-2">
               <Mail className="w-4 h-4 text-indigo-500" />
             </div>
             <div>
               <div className="text-2xs text-slate-400">Email</div>
-              <div className="text-sm font-semibold text-slate-900 dark:text-white">{email}</div>
+              <div className="text-sm font-semibold text-slate-900">{email}</div>
             </div>
           </div>
-          <button onClick={() => copy(email, setCopiedEmail)} className="p-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800">
+          <button onClick={() => copy(email, setCopiedEmail)} className="rounded-lg p-2 transition-colors hover:bg-slate-100">
             {copiedEmail ? <CheckCheck className="w-4 h-4 text-emerald-500" /> : <Copy className="w-4 h-4 text-slate-600" />}
           </button>
         </div>
 
-        <div className="flex items-center justify-between rounded-xl border p-3">
+        <div className="flex items-center justify-between rounded-2xl border border-slate-200/80 bg-slate-50/90 p-3 shadow-sm">
           <div className="flex items-center gap-3">
-            <div className="p-2 rounded bg-slate-50 dark:bg-slate-850">
-              <Github className="w-4 h-4 text-slate-700 dark:text-slate-300" />
+            <div className="rounded-xl bg-slate-100 p-2">
+              <Github className="w-4 h-4 text-slate-700" />
             </div>
             <div>
               <div className="text-2xs text-slate-400">GitHub</div>
-              <div className="text-sm font-semibold text-slate-900 dark:text-white">{github}</div>
+              <div className="text-sm font-semibold text-slate-900">{github}</div>
             </div>
           </div>
           <div className="flex items-center gap-2">
-            <a href={github} target="_blank" rel="noopener noreferrer" className="p-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800">
+            <a href={github} target="_blank" rel="noopener noreferrer" className="rounded-lg p-2 transition-colors hover:bg-slate-100">
               <ExternalLink className="w-4 h-4 text-slate-600" />
             </a>
-            <button onClick={() => copy(github, setCopiedGithub)} className="p-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800">
+            <button onClick={() => copy(github, setCopiedGithub)} className="rounded-lg p-2 transition-colors hover:bg-slate-100">
               {copiedGithub ? <CheckCheck className="w-4 h-4 text-emerald-500" /> : <Copy className="w-4 h-4 text-slate-600" />}
             </button>
           </div>
