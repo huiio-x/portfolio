@@ -82,7 +82,7 @@ export default function Hero() {
                 </div>
                 <div className="mt-4">
                   <div className="text-2xl font-bold tracking-tight text-white">신규 구축</div>
-                  <div className="text-2.5xs text-slate-400 mt-1">좋은상자 · 1인 개발 중</div>
+                  <div className="text-2.5xs text-slate-400 mt-1">좋은상자 · 1인 진행</div>
                 </div>
               </div>
 
